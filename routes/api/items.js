@@ -3,7 +3,6 @@ const router = express.Router();
 
 // Item Model
 const Item = require('../../models/item.js');
-
 module.exports = router; 
 
 // @route GET api/items 
@@ -25,6 +24,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newItem = new Item({
         name: req.body.name
+        
     });
 
     newItem.save().then(item => res.json(item));
